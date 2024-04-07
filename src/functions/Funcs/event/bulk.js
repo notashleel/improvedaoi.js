@@ -1,4 +1,4 @@
-const { BulkData } = require("../../utils/EventUtil.js");
+const { BulkData } = require("../../../utils/EventUtil.js");
 
 module.exports = (d) => {
   const data = d.util.aoiFunc(d);
