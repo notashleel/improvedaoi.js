@@ -4,9 +4,11 @@ module.exports = async (d) => {
     const err = d.inside(inside);
     if (err) return d.error(err);
 
-    const [userID, nick, reason] = inside.splits;
+    const [userID, nick, reason, guildID] = inside.splits;
 
-    const member = await d.util.getMember(d.guild, userID);
+    let gID = guildID? await d.util.getGuild(d, guildID) : d.guildID
+
+    const member = await d.util.getMember(gID, userID);
     if (!member) return d.aoiError.fnError(d, "member", {inside});
 
     await member.setNickname(nick === "" ? null : nick.addBrackets(), reason);
