@@ -246,6 +246,7 @@ const MemberOptions = {
     //thread
     threadChannel: "thread?.channel?.name?.deleteBrackets()",
     threadFlags: "flags?.toArray()",
+    timedoutUntill: "communicationDisabledUntilTimestamp",
 };
 
 //---------------Interactions------------//
